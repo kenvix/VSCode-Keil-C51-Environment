@@ -1,0 +1,110 @@
+{
+	// Place your VSCode-C-Environment workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	"announce": {
+		"prefix": "announce",
+		"body": [
+			"/**",
+			" * author: ", 
+			" * generation time: $CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE",
+			" * filename: $TM_FILENAME",
+			" * language & build version : C 11",
+			"*/"
+		],
+		"description": "署名注释",
+	},
+	"#ifndef HEADER … #define … #endif":{
+		"prefix": "defheader",
+		"body": "#ifndef ${1:${TM_FILENAME/(.*)\\.H$/${1:/upcase}_H/i}} \n#define $1 \n${2:header content}\n#endif\t// $1",
+		"description": "头文件snippets",
+		"scope": "c, cpp"
+	},
+	"#pragma once":{
+		"prefix": "pragma_once",
+		"body": "#pragma once \n $1",
+		"description": "头文件snippets_se",
+		"scope": "c, cpp"
+	},
+	"printf":{
+		"prefix": "printf",
+		"body": "printf(\"${1:%s }\\n\", $2);$3",
+		"description": "输出函数",
+		"scope": "c, cpp"
+	},
+	"scanf":{
+		"prefix": "scanf",
+		"body": "scanf(\"${1:%s}\\n\", $2);$3",
+		"description": "输入函数",
+		"scope": "c, cpp"
+	},
+	"void function":{
+		"prefix": "vfun",
+		"body": "void ${1:name}($2) {\n\t$3\n\treturn;\n}",
+		"description": "返回值为void的函数",
+		"scope": "c, cpp"
+	},
+	"other function":{
+		"prefix": "func",
+		"body": "${1:int} ${2:name}($3) {\n\t$5\n\treturn ${4:0};\n}",
+		"description": "有返回值的函数",
+		"scope": "c, cpp"
+	},
+	"If Condition":{
+		"prefix": "if",
+		"body": "if ($1) {\n\t$2\n}",
+		"description": "if片段",
+		"scope": "c, cpp"
+	},
+	"If Else":{
+		"prefix": "ifelse",
+		"body": "if ($1) {\n\t$2\n} else {\n\t$3\n}",
+		"description": "if else片段",
+		"scope": "c, cpp"
+	},
+	"If ElseIf":{
+		"prefix": "ifelif",
+		"body": "if ($1) {\n\t$2\n} else if ($3) {\n\t$4\n}",
+		"description": "if else if片段",
+		"scope": "c, cpp"
+	},
+	"If ElseIf Else":{
+		"prefix": "ifelifel",
+		"body": "if ($1) {\n\t$2\n} else if ($3) {\n\t$4\n} else {\n\t$5\n}",
+		"description": "if else if else 片段",
+		"scope": "c, cpp"
+	},
+	"Switch Statement":{
+		"prefix": "switch",
+		"body": "switch ($1) {\n$2default:\n\t${3:break;}\n}$0",
+		"description": "switch 片段",
+		"scope": "c, cpp"
+	},
+	"Do While Loop":{
+		"prefix": "dowhile",
+		"body": "do {\n\t$0\n} while($1);",
+		"description": "do while 片段",
+		"scope": "c, cpp"
+	},
+	"While Loop":{
+		"prefix": "while",
+		"body": "while ($1) {\n\t$2\n}",
+		"description": "while 片段",
+		"scope": "c, cpp"
+	},
+	"For Loop":{
+		"prefix": "for",
+		"body": "for (${1:i} = 0; ${1:i} < ${2:count}; ${1:i}${3:++}) {\n\t$4\n}",
+		"description": "for 片段",
+		"scope": "c, cpp"
+	},
+	"main":{
+		"prefix": "main",
+		"body": "#include <stdio.h>\n#include <stdlib.h>\nint main() {\n\t$0\n\n\treturn 0;\n}",
+		"description": "主函数",
+		"scope": "c"
+	}
+}

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "Keil-C51",
+            "compilerPath": "C:\\RT\\Keil\\C51\\BIN\\C51.exe",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:\\RT\\Keil\\C51\\INC"
+            ],
+            "cStandard": "c99"
+        }
+    ],
+    "version": 4
+}

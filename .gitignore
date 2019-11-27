@@ -1,0 +1,6 @@
+*.exe
+MAIN
+*.hex
+*.LST
+*.M51
+*.OBJ
