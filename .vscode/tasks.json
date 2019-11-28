@@ -8,7 +8,6 @@
             "type": "shell",
             "command": "${workspaceFolder}\\.vscode\\compileKeil.bat",
             "args": [
-                "C:\\RT\\Keil\\C51\\BIN",
                 "\"${workspaceFolder}\"",
                 "\"${workspaceFolder}\\src\"",
                 "main"
@@ -16,40 +15,6 @@
             "options": {
                 "cwd": "${workspaceFolder}\\build"
             },
-            "presentation": {
-                "reveal": "always",
-                "panel": "shared",
-                "focus": false,
-                "echo": true
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": "absolute",
-                "pattern": [
-                    {
-                        "regexp": "^(.*):(\\d+):\\s+(error|warning|note) (\\d+):\\s+([\\s\\S]*)$",
-                        "file": 1,
-                        "line": 2,
-                        "severity": 3,
-                        "message": 5
-                    }
-                ]
-            }
-        },
-        {
-            "label": "compileSDCC",
-            "type": "shell",
-            "command": "sdcc",
-            "args": [
-                "\"${workspaceFolder}\\src\\main.c\"",
-                "-o",
-                "\"${workspaceFolder}\\build\\BuildResult.hex\""
-                //"-I"
-            ],
             "presentation": {
                 "reveal": "always",
                 "panel": "shared",

@@ -1,19 +1,23 @@
 @echo off
+set KEIL_BIN_FOLDER=C:\RT\Keil\C51\BIN
+
 cls
 echo Keil Compiler batch by Kenvix
+echo Compiler path is %KEIL_BIN_FOLDER%
 
-cd /d "%2\build"
+cd /d "%1\build"
 
-call "%1\C51.EXE" "%3\%4.c" || goto failed
-move "%3\%4.LST" "%3\..\build" > NUL
-move "%3\%4.OBJ" "%3\..\build" > NUL
+call "%KEIL_BIN_FOLDER%\C51.EXE" "%2\%3.c" 
+move "%2\%3.LST" "%2\..\build" > NUL || goto failed
+move "%2\%3.OBJ" "%2\..\build" > NUL || goto failed
 
-call "%1\BL51.EXE" "%2\build\%4.OBJ" TO %4 || goto failed
-call "%1\OH51.EXE" "%2\build\%4" || goto failed
+call "%KEIL_BIN_FOLDER%\BL51.EXE" "%1\build\%3.OBJ" TO %3 
+call "%KEIL_BIN_FOLDER%\OH51.EXE" "%1\build\%3" || goto failed
 
-echo Compiled successfully: build\%4.hex
+echo Compiled successfully: build\%3.hex
 exit 0
 
 :failed
-echo Operation Failed
-exit %errorlevel%
+set ERRCODE=%errorlevel%
+echo Compilation Failed: Code %ERRCODE%
+exit %ERRCODE%

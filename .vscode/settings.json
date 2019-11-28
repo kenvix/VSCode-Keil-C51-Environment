@@ -1,26 +1,4 @@
 {
-    // 在终端中运行编译命令，否则我们无法与程序通过标准输入交互
-    "code-runner.runInTerminal": true,
-    // 如果你全局设置中的默认终端是 WSL 之类的，那么可以在工作区设置中改回 PowerShell
-    //"terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-    // 运行代码之前清除之前的输出
-    "code-runner.clearPreviousOutput": true,
-    // 开启这个后在运行编译命令之前会自动 cd 至文件所在目录
-    "code-runner.fileDirectoryAsCwd": true,
-    // 因为上面那个选项会自动 cd，所以我删除了默认编译命令中的 cd 语句
-    // 同时我将编译结果的输出目录修改为了同目录下的 build 文件夹
-    // 不然源码文件和编译结果混杂在一个目录中非常杂乱（尤其是刷题时）
-    // 这里只保留了 C 和 C++ 的编译命令，有需要其他语言的请自行添加
-    "code-runner.executorMap": {
-        "c": "cls && gcc $fileName -fexec-charset=GBK -o build/$fileNameWithoutExt && .\\build\\$fileNameWithoutExt"
-    },
-    // 运行代码后切换焦点至终端，方便直接输入测试数据
-    "code-runner.preserveFocus": false,
-    // 在运行代码之前保存文件
-    "code-runner.saveFileBeforeRun": true,
-
-    // 提高自定义片段的优先级
-    "editor.snippetSuggestions": "top",
     // 控制是否根据文档中的文字计算自动完成列表。
     "editor.wordBasedSuggestions": false,
     // tab键补全
@@ -29,10 +7,13 @@
     "editor.suggest.localityBonus": true,
     // 这里更改为根据之前的补全进行排序
     "editor.suggestSelection": "recentlyUsedByPrefix",
+    // "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
         "reg52.h": "c",
         "8052.h": "c",
         "RC522.C": "cpp",
-        "type_traits": "cpp"
-    }
+        "type_traits": "cpp",
+        "intrins.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
