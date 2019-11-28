@@ -31,7 +31,7 @@
                     "fileLocation": "absolute",
                     "pattern": [
                         {
-                            "regexp": "(ERROR|WARNING|NOTE|INFO) C(\\d*) IN LINE (\\d*) OF (.*): (.*)",
+                            "regexp": "(ERROR|WARNING|NOTE|INFO) C(\\d*) IN LINE (\\d*) OF (.*?): (.*)",
                             "file": 4,
                             "line": 3,
                             "code": 2,

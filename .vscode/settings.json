@@ -6,7 +6,7 @@
     // 词语优先级
     "editor.suggest.localityBonus": true,
     // 这里更改为根据之前的补全进行排序
-    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "editor.suggestSelection": "recentlyUsed",
     // "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
         "reg52.h": "c",

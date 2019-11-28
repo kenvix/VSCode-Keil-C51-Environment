@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Keil-C51",
+            "name": "Keil",
             "compilerPath": "${workspaceFolder}\\.vscode\\compileKeil.bat",
             "includePath": [
                 "${workspaceFolder}/**",
@@ -24,7 +24,12 @@
                 "at=/**/",
                 "interrupt=/**/"
             ],
-            "cStandard": "c99"
+            "cStandard": "c99",
+            "compilerArgs": [
+                "\"${workspaceFolder}\"",
+                "\"${workspaceFolder}\\src\"",
+                "main"
+            ]
         }
     ],
     "version": 4
