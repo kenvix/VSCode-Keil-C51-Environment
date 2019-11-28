@@ -15,5 +15,6 @@
         "type_traits": "cpp",
         "intrins.h": "c"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.clang_format_fallbackStyle": "Webkit"
 }
